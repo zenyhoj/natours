@@ -6,73 +6,113 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    color: #777;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.7;
-    padding: 30px;
+  font-family: 'Lato', sans-serif;
+  color: #777;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 30px;
 }
 
 /* *******************  Header styles ************************* */
 
 .header {
-
-    background-image: linear-gradient(to right,rgba(126,213,111,0.8), rgba(40,180,131,0.8)), url(../img/hero.jpg);
-    height: 95vh;
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    position: relative;
-/* clip-path: polygon(100% 0, 100% 100%, 0 100%); */
+  background-image: linear-gradient(
+      to right,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url(../img/hero.jpg);
+  height: 95vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /* clip-path: polygon(100% 0, 100% 100%, 0 100%); */
 }
 
 .logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .logo {
-    height: 35px;
+  height: 35px;
 }
 
 .heading-main-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%); /*to center the element horizontally and vertically*/
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*to center the element horizontally and vertically*/
 }
 
 .heading-primary {
-    text-transform: uppercase;
-    color: #fff;
-    
+  text-transform: uppercase;
+  color: #fff;
 }
 
-
-.heading-primary-main{
-    letter-spacing: 35px;
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
+.heading-primary-main {
+  letter-spacing: 35px;
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  animation: moveInLeft 1s ease-out; /*shorthand for animation-name animation-duration animation-timing-function */
 }
 
-.heading-primary-sub{
-    display: block;
-    margin-top: 0;
-    font-size: 25px;
-    font-weight: 400;
-    letter-spacing: 17px;
-    margin-top: -15px;
+.heading-primary-sub {
+  display: block;
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 17px;
+  margin-top: -15px;
+  animation: moveInRight 1s ease-in; /*shorthand for animation-name animation-duration animation-timing-function */
+}
 
+/*animation for .heading-primary-main*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/*end of animation for .heading-primary-main*/
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 /* *******************  End of Header styles ************************* */
