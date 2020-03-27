@@ -56,6 +56,8 @@ body {
     -50%,
     -50%
   ); /*to center the element horizontally and vertically*/
+
+  text-align: center;
 }
 
 .heading-primary {
@@ -82,7 +84,38 @@ body {
   animation: moveInRight 1s ease-in; /*shorthand for animation-name animation-duration animation-timing-function */
 }
 
-/*animation for .heading-primary-main*/
+/* button effects */
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* x y blur-value color*/
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  margin-top: 20px;
+  color: #777;
+  background: #fff;
+  padding: 10px 40px;
+}
+
+/* end of button effects */
+
+/* animations */
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -98,7 +131,6 @@ body {
     transform: translate(0);
   }
 }
-/*end of animation for .heading-primary-main*/
 
 @keyframes moveInRight {
   0% {
@@ -115,5 +147,6 @@ body {
     transform: translate(0);
   }
 }
+/* end of animations */
 
 /* *******************  End of Header styles ************************* */
