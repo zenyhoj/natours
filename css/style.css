@@ -61,6 +61,7 @@ body {
 .heading-primary {
   text-transform: uppercase;
   color: #fff;
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
