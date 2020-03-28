@@ -94,11 +94,12 @@ body {
   font-weight: 700;
   border-radius: 50px;
   transition: all 0.2s;
+  position: relative;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* x y blur-value color*/
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* x y blur-value color */
 }
 .btn:active {
   transform: translateY(-1px);
@@ -110,6 +111,33 @@ body {
   color: #777;
   background: #fff;
   padding: 10px 40px;
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
 
 /* end of button effects */
@@ -147,6 +175,19 @@ body {
     transform: translate(0);
   }
 }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* end of animations */
 
 /* *******************  End of Header styles ************************* */
