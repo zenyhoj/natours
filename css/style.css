@@ -29,49 +29,43 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
   /* clip-path: polygon(100% 0, 100% 100%, 0 100%); */ }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.heading-main-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /*to center the element horizontally and vertically*/
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header-text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*to center the element horizontally and vertically*/
+    text-align: center; }
 
 .heading-primary {
   text-transform: uppercase;
   color: #fff;
   backface-visibility: hidden; }
-
-.heading-primary--main {
-  letter-spacing: 3.5rem;
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  animation: moveInLeft 1s ease-out;
-  /*shorthand for animation-name animation-duration animation-timing-function */ }
-
-.heading-primary--sub {
-  display: block;
-  margin-top: 0;
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 1.7rem;
-  margin-top: -1.5rem;
-  animation: moveInRight 1s ease-in;
-  /*shorthand for animation-name animation-duration animation-timing-function */ }
+  .heading-primary--main {
+    letter-spacing: 3.5rem;
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    animation: moveInLeft 1s ease-out;
+    /*shorthand for animation-name animation-duration animation-timing-function */ }
+  .heading-primary--sub {
+    display: block;
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1.7rem;
+    margin-top: -1.5rem;
+    animation: moveInRight 1s ease-in;
+    /*shorthand for animation-name animation-duration animation-timing-function */ }
 
 /* button effects */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
@@ -84,6 +78,9 @@ body {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* x y blur-value color */ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
@@ -94,6 +91,8 @@ body {
   color: #777;
   background: #fff;
   padding: 1rem 4rem; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: '';
@@ -106,13 +105,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;

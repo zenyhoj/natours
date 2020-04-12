@@ -49,19 +49,19 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
   /* clip-path: polygon(100% 0, 100% 100%, 0 100%); */
-}
 
-.header__logo-box {
+  &__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.header__logo {
+
+&__logo {
   height: 3.5rem;
 }
 
-.heading-main-box {
+&-text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -72,86 +72,103 @@ body {
 
   text-align: center;
 }
+}
+
+
 
 .heading-primary {
   text-transform: uppercase;
   color: $color-white;
   backface-visibility: hidden;
+
+  &--main {
+    letter-spacing: 3.5rem;
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    animation: moveInLeft 1s ease-out; /*shorthand for animation-name animation-duration animation-timing-function */
+  }
+  
+  &--sub {
+    display: block;
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1.7rem;
+    margin-top: -1.5rem;
+    animation: moveInRight 1s ease-in; /*shorthand for animation-name animation-duration animation-timing-function */
+  }
+  
 }
 
-.heading-primary--main {
-  letter-spacing: 3.5rem;
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  animation: moveInLeft 1s ease-out; /*shorthand for animation-name animation-duration animation-timing-function */
-}
-
-.heading-primary--sub {
-  display: block;
-  margin-top: 0;
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 1.7rem;
-  margin-top: -1.5rem;
-  animation: moveInRight 1s ease-in; /*shorthand for animation-name animation-duration animation-timing-function */
-}
 
 /* button effects */
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 700;
-  border-radius: 5rem;
-  transition: all 0.2s;
-  position: relative;
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 700;
+        border-radius: 5rem;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* x y blur-value color */
+
+        &::after {
+            
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+         }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &--white {
+        margin-top: 2rem;
+        color: $color-grey-dark;
+        background: $color-white;
+        padding: 1rem 4rem;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &::after { 
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+    
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+      
+      
+      
 }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* x y blur-value color */
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
 
-.btn--white {
-  margin-top: 2rem;
-  color: $color-grey-dark;
-  background: $color-white;
-  padding: 1rem 4rem;
-}
 
-.btn::after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
 
-.btn--white::after {
-  background-color: $color-white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-}
 
 /* end of button effects */
 
