@@ -1,6 +1,31 @@
-/*$color-primary: #7ed56f;
-$color-primary-light: #55c57a;
-$color-primary-dark: #28b485;*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 *,
 *::after,
 *::before {
@@ -12,15 +37,16 @@ html {
   font-size: 62.5%; }
 
 body {
+  padding: 3rem;
+  box-sizing: border-box; }
+
+body {
   font-family: 'Lato', sans-serif;
   color: #777;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.7;
-  padding: 3rem;
-  box-sizing: border-box; }
+  line-height: 1.7; }
 
-/* *******************  Header styles ************************* */
 .header {
   background-image: linear-gradient(to right, rgba(9, 41, 158, 0.8), rgba(8, 54, 197, 0.8)), url(../img/hero.jpg);
   height: 95vh;
@@ -110,35 +136,9 @@ body {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; }
 
-/* end of button effects */
-/* animations */
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-/* end of animations */
-/* *******************  End of Header styles ************************* */
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background: red; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }

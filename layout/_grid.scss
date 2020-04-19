@@ -1,0 +1,11 @@
+.row {
+    max-width: $grid-width; //1140px
+    margin: 0 auto; //center
+    background: red;
+    
+   
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical; //gives 80px margin-bottom to row class except for the last row
+    }
+
+}
