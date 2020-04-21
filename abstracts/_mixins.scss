@@ -1,6 +1,6 @@
 @mixin clearfix { //used for resetting height of parent element due to float
 
-    &::after {
+    &::after { // this can then be used for the parent container element
         content: '';
         display: table;
         clear: both;    
