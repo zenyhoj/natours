@@ -1,21 +1,17 @@
 .row {
     max-width: $grid-width; //1140px
     margin: 0 auto; //center
-    background: lightgrey;
 
     @include clearfix;
-    
-    
-   
-    &:not(:last-child){
+       
+    &:not(:last-child){ // translates to .row:not(:last-child)
         margin-bottom: $gutter-vertical; //gives 80px margin-bottom to row class except for the last row
     }
 
-    [class^="col-"] { // ^ all class attributes that starts with col-
-        background: darkgrey;
+    [class^="col-"] { // ^ all classes that starts with col-
         float: left;
 
-        &:not(:last-child) {
+        &:not(:last-child) { // translates to .col-1-of-x:not(:last-child) {}
             margin-right: $gutter-horizontal;
 
         } /// translates to: .col-1-of-2:not(:last-child), meaning all child items will have margin right except for the last one
