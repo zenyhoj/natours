@@ -1,5 +1,6 @@
 .u-text-center {
-  // utility for centering text elements within a parent element
+  // utility for centering text elements within a parent element. 
+  // parent element must be inline-block;
   text-align: center;
 }
 
@@ -10,6 +11,11 @@
 .u-margin-medium {
   margin-bottom: 3rem;
 }
+
 .u-margin-bottom-big {
   margin-bottom: 8rem;
+}
+
+.u-margin-bottom-negative-big {
+  margin-bottom: -8rem;
 }
