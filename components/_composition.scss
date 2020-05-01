@@ -1,0 +1,44 @@
+.composition {
+
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-dark, .4);
+    border-radius: 2px;
+    z-index: 10;
+    position: absolute;
+    // outline-offset: 2rem; //this works with outline element
+    transition: all .2s; //this works with transform element
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+
+    }
+
+    &--p2 {
+      top: 2rem;
+      right: 0;
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:hover {
+      // outline: 1.5rem solid $color-primary;
+      transform: scale(1.25) translateY(.2rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-dark, .5);
+      z-index: 20;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    //when, photo is hovered, photos that are not hovered will be scaled to 0.9
+    transform: scale(.8);
+  }
+
+
+}
