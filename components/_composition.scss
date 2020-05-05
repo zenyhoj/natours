@@ -9,7 +9,7 @@
     z-index: 10;
     position: absolute;
     // outline-offset: 2rem; //this works with outline element
-    transition: all .2s; //this works with transform element
+    transition: all .2s; //transition all styles within :hover
 
     &--p1 {
       top: -2rem;
