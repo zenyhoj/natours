@@ -1,0 +1,120 @@
+// index.html
+
+<link rel="stylesheet" href="css/icon-font.css" /> /* icon fonts download in linea.io. */
+
+<section class="section-features">
+  <div class="row">
+    <div class="col-1-of-4">
+      <div class="feature-box">
+        <i class="feature-box__icon icon-basic-world"></i>
+        <h3 class="heading-tertiary u-margin-small">
+          Explore the world
+        </h3>
+        <p class="feature-box__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+          itaque esse quae, placeat natus alias tenetu
+        </p>
+      </div>
+    </div>
+
+    <div class="col-1-of-4">
+      <div class="feature-box">
+        <i class="feature-box__icon icon-basic-compass"></i>
+        <h3 class="heading-tertiary u-margin-small">
+          Meet nature
+        </h3>
+        <p class="feature-box__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+          itaque esse quae, placeat natus alias tenetu
+        </p>
+      </div>
+    </div>
+
+    <div class="col-1-of-4">
+      <div class="feature-box">
+        <i class="feature-box__icon icon-basic-map"></i>
+        <h3 class="heading-tertiary u-margin-small">
+          Find your way
+        </h3>
+        <p class="feature-box__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+          itaque esse quae, placeat natus alias tenetu
+        </p>
+      </div>
+    </div>
+
+    <div class="col-1-of-4">
+      <div class="feature-box">
+        <i class="feature-box__icon icon-basic-heart"></i>
+        <h3 class="heading-tertiary u-margin-small">
+          Live a healthier life
+        </h3>
+        <p class="feature-box__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+          itaque esse quae, placeat natus alias tenetu
+        </p> /* .feature-box__text inherits in .feature-box font size */
+      </div>
+    </div>
+  </div>
+</section>
+
+//pages/_home.scss
+
+.section-features {
+padding: 20rem 0;
+background-image: linear-gradient(to right,
+rgba($color-primary, 0.8),
+rgba($color-primary-dark, 0.8)),
+url(../img/nat-4.jpg);
+background-size: cover;
+
+margin-top: -10rem;
+transform: skewY(-7deg);
+
+&>* {
+transform: skewY(7deg); // all direct elements of .section-features
+}
+}
+
+//components/_feature-box.scss
+
+.feature-box {
+background-color: rgba($color-white, .8);
+font-size: 1.5rem;
+padding: 2.5rem;
+text-align: center;
+border-radius: 3px;
+box-shadow: 0 1.5rem 4rem rgba($color-dark, .35);
+transition: transform .3s; //gives transition to hover effect
+
+&__icon {
+font-size: 6rem;
+margin-bottom: 3rem;
+display: inline-block;
+background-image: linear-gradient(to right,
+rgba($color-primary, 0.6),
+$color-primary-dark);
+background-clip: text; //clips the background image into the text
+-webkit-background-clip: text;
+color: transparent;
+}
+
+&:hover {
+transform: translateY(-1.5rem) scale(1.03);
+}
+}
+
+//base/_typography.scss
+
+.heading-tertiary {
+font-size: $default-font-size;
+text-transform: uppercase;
+}
+
+.paragraph {
+font-size: $default-font-size;
+
+&:not(:last-child) {
+margin-bottom: 1.5rem;
+}
+}

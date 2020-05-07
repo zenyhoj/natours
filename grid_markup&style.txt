@@ -1,0 +1,106 @@
+<section class="grid-test">
+      
+      <div class="row">
+        <div class="col-1-of-2">Col 1 of 2</div>
+        <div class="col-1-of-2">Col 1 of 2</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">Col 1 of 3</div>
+        <div class="col-1-of-3">Col 1 of 3</div>
+        <div class="col-1-of-3">Col 1 of 3</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">Col 1 of 3</div>
+        <div class="col-2-of-3">Col 2 of 3</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-1-of-4">Col 1 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-2-of-4">Col 2 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">Col 1 of 4</div>
+        <div class="col-3-of-4">Col 3 of 4</div>
+      </div>  
+</section>
+
+    //layout/_grid.scss
+
+    .row {
+      max-width: $grid-width; //1140px
+      margin: 0 auto; //center
+  
+      @include clearfix;
+  
+      &:not(:last-child) {
+          // translates to .row:not(:last-child)
+          margin-bottom: $gutter-vertical; //gives 80px margin-bottom to row class except for the last row
+      }
+  
+      [class^="col-"] { /* ^ means all classes that starts with col- */
+          
+        float: left;
+  
+          &:not(:last-child) {
+              // translates to .col-1-of-x:not(:last-child) {}
+              margin-right: $gutter-horizontal;
+          }
+  
+          /* translates to: .col-1-of-2:not(:last-child), meaning all child items will have margin right except for the last one */
+      }
+  
+      .col-1-of-2 {
+          width: calc((100% - #{$gutter-horizontal}) / 2); //2 equal columns
+      }
+  
+      .col-1-of-3 {
+          width: calc((100% - 2 * #{$gutter-horizontal}) / 3); //3 equal columns
+      }
+  
+      .col-2-of-3 {
+          width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}); // 2 * the width of the column + the gutter
+      }
+  
+      .col-1-of-4 {
+          width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+      }
+  
+      .col-2-of-4 {
+          width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+      }
+  
+      .col-3-of-4 {
+          width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+      }
+    }
+
+
+//sass/_main.scss
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "layout/header";
+@import "components/button";
+@import "layout/grid";
+@import "pages/home";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+  
+
+

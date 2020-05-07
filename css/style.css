@@ -83,9 +83,6 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
-.u-margin-bottom-negative-big {
-  margin-bottom: -8rem; }
-
 .header {
   background-image: linear-gradient(to right, rgba(9, 41, 158, 0.8), rgba(8, 54, 197, 0.8)), url(../img/hero.jpg);
   height: 95vh;

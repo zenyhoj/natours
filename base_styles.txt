@@ -1,0 +1,54 @@
+// base/_base.scss
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+  }
+
+body {  
+    padding: 3rem;
+    box-sizing: border-box;
+}
+  
+// abstracts/_variable.scss
+
+$color-primary: #09299e;
+$color-primary-light: #0d5ede;
+$color-primary-dark: #0836c5;
+$color-dark: #000;
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-grey-light1: #f7f7f7;
+
+/* used in section-tours */
+$color-secondary-light: #ffb900; //used in section-tours
+$color-secondary-dark: #ff7730;
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$box-shadow: 0 1.5rem 4rem rgba($color-dark, .15);
+
+/* GRID VARIABLES */
+$grid-width: 114rem;
+$gutter-vertical: 8rem; //translates to margin-bottom: 80px
+$gutter-horizontal: 6rem; //translates to margin-right: 60px
+
+$default-font-size: 1.6rem; /* font sizes */
+
+
+// base/_mixins.scss
+
+@mixin clearfix { //used for resetting height of parent element due to float
+
+    &::after { // this can then be used for the parent container element
+        content: '';
+        display: table;
+        clear: both;    
+    }
+
+}
