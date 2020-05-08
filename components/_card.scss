@@ -1,4 +1,5 @@
 .card {
+  // CARD FUNCTIONALITY
 
   height: 50rem;
   perspective: 150rem;
@@ -7,7 +8,6 @@
   position: relative;
 
   &__side {
-
     height: 50rem;
     width: 100%;
     position: absolute;
@@ -15,10 +15,10 @@
     left: 0;
     backface-visibility: hidden;
     border-radius: 3px;
-    // box-shadow: 
+    overflow: hidden; // to make the front image to not overflow with the border-radius property of the parent
+    // box-shadow:
     box-shadow: $box-shadow;
-    transition: all .8s ease;
-
+    transition: all 0.8s ease;
 
     &--front {
       // background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -26,28 +26,98 @@
     }
 
     &--back {
-
       transform: rotateY(180deg); //rotates 180 degrees and is hidden by default using backface-visibility
 
       &-1 {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark);
       }
     }
   }
 
   &:hover &__side--front {
     //when hovered, .card .card__side--front rotates 180deg
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
-
 
   &:hover &__side--back {
     transform: rotateY(0deg);
   }
 
+  // FRONT STYLING
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark),
+        url(../img/nat-5.jpg); //this works with background-blend-mode and overflow:hidden 
+    }
+  }
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 16rem;
+    right: 2rem;
+
+    display: inline-block;
+    width: 55%;
+
+  }
+
+  &__heading-span {
+
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+
+      background-image: linear-gradient(to right bottom,
+          rgba($color-secondary-light, .85),
+          rgba($color-secondary-dark, .85));
+
+    }
+  }
+
+  &__details {
+
+    padding: 2rem;
+
+    ul {
+
+      margin: 0 auto;
+      list-style: none;
+      width: 80%;
+
+
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light2;
+        }
+      }
+
+    }
 
 
 
 
-
+  }
 }
