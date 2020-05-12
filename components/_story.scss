@@ -1,0 +1,35 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-dark, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  font-size: $default-font-size;
+  padding: 6rem;
+  padding-left: 9rem; //adds the 3rem here to move back to the center
+
+  transform: skewX(-12deg);
+
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%); //radius vertical_position horizontal_position
+    shape-outside: circle(50% at 50% 50%); //radius vertical_position horizontal_position
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    background-color: orangered;
+    transform: translateX(-3rem) skewX(12deg); //to move the shape -3rem. used this instead of margin-left
+  }
+
+  &__img {
+    height: 100%; //need height property to nicely fit whole image in a shape
+
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+}
