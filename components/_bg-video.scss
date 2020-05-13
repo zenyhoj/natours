@@ -1,0 +1,17 @@
+.bg-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; //if video object is overlapped
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // used in video, to perfectly fill the parent element's whole width and height with video aspect ratio just like in background-size: cover in an image
+  }
+
+}
