@@ -10,7 +10,6 @@
 
   transform: skewX(-12deg);
 
-
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -21,15 +20,47 @@
     clip-path: circle(50% at 50% 50%);
     background-color: orangered;
     transform: translateX(-3rem) skewX(12deg); //to move the shape -3rem. used this instead of margin-left
+    position: relative; //container for figcaption (story__caption)
+
   }
 
   &__img {
     height: 100%; //need height property to nicely fit whole image in a shape
+    transform: translateX(-4rem) scale(1.4); //140% initial state
+    transition: all .5s;
+    backface-visibility: hidden;
 
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    font-size: $default-font-size;
+    color: $color-white;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; //to avoid shaking of element's effect during transition
+
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1); //140% initial state
+    filter: blur(3px) brightness(80%);
+
   }
 
 }
