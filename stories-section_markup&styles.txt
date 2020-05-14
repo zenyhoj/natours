@@ -1,0 +1,155 @@
+<section class="section-stories">
+
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop>
+          <source src="img/video.mp4" type="video/mp4">
+          <source src="img/video.webm" type="video/webm">
+          YOUR BROWSER IS NOT SUPPORTED!
+        </video>
+      </div>
+
+      <div class="u-text-center u-margin-bottom-big">
+        <h2 class="heading-secondary">
+          We make people genuinely happy
+        </h2>
+      </div>
+
+      <div class="row">
+        <div class="story">
+          <figure class="story__shape">
+            <img class="story__img" src="img/nat-8.jpg" alt="Person on a tour">
+            <figcaption class="story__caption">Mary Smith</figcaption>
+          </figure>
+          <div class="story__text">
+            <h3 class="heading-tertiary u-margin-small">
+              Your going to fall in love with nature
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              necessitatibus tempore fugit dicta libero doloribus obcaecati
+              dolorum consequuntur repellendus, totam, culpa laborum temporibus
+              voluptatum quos id fuga quibusdam eveniet error?
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="story">
+          <figure class="story__shape">
+            <img class="story__img" src="img/nat-9.jpg" alt="Person on a tour">
+            <figcaption class="story__caption">Jack Wilson</figcaption>
+          </figure>
+          <div class="story__text">
+            <h3 class="heading-tertiary u-margin-small">
+              Wow! My Life is completely different now
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              necessitatibus tempore fugit dicta libero doloribus obcaecati
+              dolorum consequuntur repellendus, totam, culpa laborum temporibus
+              voluptatum quos id fuga quibusdam eveniet error?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="u-text-center">
+        <a href="#" class="u-text-center btn-text">Read all stories &rarr;</a>
+      </div>
+    </section>
+ 
+//styles
+
+//pages/_home.scss
+.section-stories {
+  position: relative;
+  padding: 15rem 0;
+}
+
+//components/_bg_video.scss
+.bg-video { //parent element: 
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; //if video object is overlapped
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // used in video, to perfectly fill the parent element's whole width and height with video aspect ratio just like in background-size: cover in an image
+  }
+
+}
+
+// components/_story.scss
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-dark, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  font-size: $default-font-size;
+  padding: 6rem;
+  padding-left: 9rem; //adds the 3rem here to move back to the center
+
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%); //radius vertical_position horizontal_position
+    shape-outside: circle(50% at 50% 50%); //radius vertical_position horizontal_position
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    background-color: orangered;
+    transform: translateX(-3rem) skewX(12deg); //to move the shape -3rem. used this instead of margin-left
+    position: relative; //container for figcaption (story__caption)
+
+  }
+
+  &__img {
+    height: 100%; //need height property to nicely fit whole image in a shape
+    transform: translateX(-4rem) scale(1.4); //140% initial state
+    transition: all .5s;
+    backface-visibility: hidden;
+
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); //initial state
+    text-transform: uppercase;
+    font-size: $default-font-size;
+    color: $color-white;
+    text-align: center;
+    opacity: 0; //make the text invisible
+    transition: all .5s;
+    backface-visibility: hidden; //to avoid shaking of element's effect during transition
+
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1); //140% initial state
+    filter: blur(3px) brightness(80%);
+
+  }
+
+}
