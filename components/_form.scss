@@ -1,0 +1,54 @@
+.form {
+
+  &__group:not(:last-child) {
+    margin-bottom: 1rem;
+
+
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    display: block; // to occupy the whole space and move the label down
+    width: 85%;
+    color: inherit;
+
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-dark, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      //invalid focused input element
+      border-bottom: 3px solid $color-secondary-dark;
+
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .5s;
+  }
+
+  &__input:placeholder-shown+&__label {
+    // + (adjascent or next sibling). form__input and form__label are both siblings, this means that when form__input placeholder is shown, form__label is hidden.
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
