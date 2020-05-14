@@ -1,65 +1,9 @@
-<section class="section-stories">
-
-      <div class="bg-video">
-        <video class="bg-video__content" autoplay muted loop>
-          <source src="img/video.mp4" type="video/mp4">
-          <source src="img/video.webm" type="video/webm">
-          YOUR BROWSER IS NOT SUPPORTED!
-        </video>
-      </div>
-
-      <div class="u-text-center u-margin-bottom-big">
-        <h2 class="heading-secondary">
-          We make people genuinely happy
-        </h2>
-      </div>
-
-      <div class="row">
-        <div class="story">
-          <figure class="story__shape">
-            <img class="story__img" src="img/nat-8.jpg" alt="Person on a tour">
-            <figcaption class="story__caption">Mary Smith</figcaption>
-          </figure>
-          <div class="story__text">
-            <h3 class="heading-tertiary u-margin-small">
-              Your going to fall in love with nature
-            </h3>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-              necessitatibus tempore fugit dicta libero doloribus obcaecati
-              dolorum consequuntur repellendus, totam, culpa laborum temporibus
-              voluptatum quos id fuga quibusdam eveniet error?
-            </p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="story">
-          <figure class="story__shape">
-            <img class="story__img" src="img/nat-9.jpg" alt="Person on a tour">
-            <figcaption class="story__caption">Jack Wilson</figcaption>
-          </figure>
-          <div class="story__text">
-            <h3 class="heading-tertiary u-margin-small">
-              Wow! My Life is completely different now
-            </h3>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-              necessitatibus tempore fugit dicta libero doloribus obcaecati
-              dolorum consequuntur repellendus, totam, culpa laborum temporibus
-              voluptatum quos id fuga quibusdam eveniet error?
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="u-text-center">
-        <a href="#" class="u-text-center btn-text">Read all stories &rarr;</a>
-      </div>
-    </section>
- 
-//styles
+<section class="section-stories"><div class="bg-video"><video class="bg-video__content"autoplay muted loop><source src="img/video.mp4"type="video/mp4"><source src="img/video.webm"type="video/webm">YOUR BROWSER IS NOT SUPPORTED ! </video></div><div class="u-text-center u-margin-bottom-big"><h2 class="heading-secondary">We make people genuinely happy </h2></div><div class="row"><div class="story"><figure class="story__shape"><img class="story__img"src="img/nat-8.jpg"alt="Person on a tour"><figcaption class="story__caption">Mary Smith</figcaption></figure><div class="story__text"><h3 class="heading-tertiary u-margin-small">Your going to fall in love with nature </h3><p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus tempore fugit dicta libero doloribus obcaecati dolorum consequuntur repellendus,
+totam,
+culpa laborum temporibus voluptatum quos id fuga quibusdam eveniet error? </p></div></div></div><div class="row"><div class="story"><figure class="story__shape"><img class="story__img"src="img/nat-9.jpg"alt="Person on a tour"><figcaption class="story__caption">Jack Wilson</figcaption></figure><div class="story__text"><h3 class="heading-tertiary u-margin-small">Wow ! My Life is completely different now </h3><p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus tempore fugit dicta libero doloribus obcaecati dolorum consequuntur repellendus,
+totam,
+culpa laborum temporibus voluptatum quos id fuga quibusdam eveniet error? </p></div></div></div><div class="u-text-center"><a href="#"class="u-text-center btn-text">Read all stories &rarr;
+</a></div></section> //styles
 
 //pages/_home.scss
 .section-stories {
@@ -68,7 +12,8 @@
 }
 
 //components/_bg_video.scss
-.bg-video { //parent element: 
+.bg-video {
+  //parent element: 
   position: absolute;
   height: 100%;
   width: 100%;
