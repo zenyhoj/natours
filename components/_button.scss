@@ -2,6 +2,8 @@
 
 .btn {
 
+    &,
+    // .btn itself because <button> doesn't have link and visited pseudo class
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -11,6 +13,10 @@
         border-radius: 5rem;
         transition: all 0.2s;
         position: relative;
+
+        // style for <button>
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -25,9 +31,14 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus //to have the same style as with the active state and for the blue outline by default not to show
+
+        {
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
     }
 
     &--white {

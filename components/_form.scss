@@ -1,5 +1,6 @@
 .form {
 
+
   &__group:not(:last-child) {
     margin-bottom: 1rem;
 
@@ -16,6 +17,7 @@
     display: block; // to occupy the whole space and move the label down
     width: 85%;
     color: inherit;
+    transition: all .3s;
 
 
     &:focus {
@@ -40,7 +42,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 2rem;
-    margin-top: .7rem;
+    // margin-top: .7rem;
     display: block;
     transition: all .5s;
   }
@@ -50,5 +52,58 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+    transform: translateY(-1.3rem);
+
+  }
+
+  &__radio-input {
+    display: none; //hidden by default
+
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    padding-left: 4rem;
+    cursor: pointer;
+    position: relative; //parent element for &__radio-button. this is needed for &__radio-button styles to show
+  }
+
+  &__radio-button {
+    //custom radio button to be used in behalf of the default radio button
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -4px;
+
+    &::after {
+      content: ""; //this is necessary in order for ::after to work
+      position: absolute;
+      display: block;
+      width: 1.3rem;
+      height: 1.3rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0; //initial state 
+      transition: opacity .2s;
+    }
+  }
+
+  &__radio-input:checked~&__radio-label &__radio-button::after {
+    // &__radio-label is sibling of &__radio-input and &__radio-button is a child of &__radio-label
+
+
+    opacity: 1;
   }
 }
