@@ -11,8 +11,8 @@
     font-size: 6rem;
     margin-bottom: 3rem;
     display: inline-block;
-    background-image: linear-gradient(to right,
-        rgba($color-primary, 0.6),
+    background-image: linear-gradient(to right bottom,
+        rgba($color-primary, 0.8),
         $color-primary-dark);
     background-clip: text; //clips the background image into the text
     -webkit-background-clip: text;
