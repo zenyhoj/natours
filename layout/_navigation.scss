@@ -4,6 +4,7 @@
   }
 
   &__button {
+    //serves as a label
 
     width: 7rem;
     height: 7rem;
@@ -13,6 +14,7 @@
     right: 6rem;
     background-color: $color-white;
     z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-dark, .15);
   }
 
   &__background {
@@ -26,19 +28,28 @@
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
 
-    transform: scale(80);
+    transition: transform .8s;
+
 
   }
 
   &__nav {
     height: 100vh;
-    width: 100%;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 1500;
 
+    // initially hide the links
+    opacity: 0;
+    width: 0;
+
+    transition: all .8s; //transition from &__checkbox:checked~&__nav opacity
+
+
   }
+
+
 
   &__list {
     position: absolute;
@@ -84,4 +95,18 @@
       transform: translateX(1rem);
     }
   }
+
+
+
+  &__checkbox:checked~&__background {
+    //this works because checkbox is checked when &__button as label for checkbox id=navi-toggle is clicked
+    transform: scale(80);
+  }
+
+  &__checkbox:checked~&__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+
 }
