@@ -1,0 +1,114 @@
+<!-- navigation section -->
+
+  <div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">MENU</label>
+    <div class="navigation__background">&nbsp;</div>
+
+    <nav class="navigation__nav">
+      <ul class="navigation__list">
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natours</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your Benefits</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Tours</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- end of navigation -->
+
+
+//layout/_navigation.scss
+
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    background-color: $color-white;
+    z-index: 2000;
+  }
+
+  &__background {
+    // used for background
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    z-index: 1000;
+
+    transform: scale(80);
+
+  }
+
+  &__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+
+    &:link,
+    &:visited {
+      display: inline-block; //<a> inline element by default
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-white;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+      background-size: 250%; //to cover the whole text
+      transition: all .4s;
+
+      span {
+        margin-right: 1.5rem;
+        // display: inherit;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+}
+
+//main.scss
+  @import "layout/navigation";
+
