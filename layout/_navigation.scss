@@ -6,6 +6,7 @@
   &__button {
     //serves as a label
 
+    text-align: center; //to center the line icons
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -15,6 +16,8 @@
     background-color: $color-white;
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-dark, .15);
+    cursor: pointer;
+
   }
 
   &__background {
@@ -39,6 +42,7 @@
     top: 0;
     right: 0;
     z-index: 1500;
+    // background-color: yellow;
 
     // initially hide the links
     opacity: 0;
@@ -107,6 +111,79 @@
     opacity: 1;
     width: 100%;
   }
+
+
+
+
+  // .navigation__icon functionality
+  &__icon {
+
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+
+      // transform: all .2s;
+    }
+
+    &::before,
+    &::after {
+      content: ""; //in order for the two line as icons to render
+      position: absolute;
+      left: 0;
+
+      transition: transform .2s;
+
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
+    }
+
+  }
+
+  // moves the line icon up and down -2px and 2px respectively
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+
+  }
+
+
+
+  //when the checkbox is checked (or when the button/label is clicked
+  // background-color: trasparent;
+  &__checkbox:checked+&__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked+&__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked+&__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+
+
+
+
 
 
 }
