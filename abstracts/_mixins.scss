@@ -1,9 +1,18 @@
-@mixin clearfix { //used for resetting height of parent element due to float
+@mixin clearfix {
+    //used for resetting height of parent element due to float
 
-    &::after { // this can then be used for the parent container element
+    &::after {
+        // this can then be used for the parent container element
         content: '';
         display: table;
-        clear: both;    
+        clear: both;
     }
 
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
