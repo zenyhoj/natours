@@ -7,15 +7,29 @@
   background-color: rgba($color-dark, 0.8);
   z-index: 9999;
 
+  // initially hides the popup
+  opacity: 0;
+  visibility: hidden;
+
+  // animate when popup opens
+  transition: all 0.3s;
+
   &__content {
+    @include absCenter;
     width: 75%;
     // height: 40rem;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-dark, 0.2);
-    @include absCenter;
+
     border-radius: 3px;
     display: table;
     overflow: hidden;
+
+    // initial state
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    transition: all 0.4s 0.2s;
   }
 
   &__left {
@@ -48,5 +62,37 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      text-decoration: none;
+      font-size: 3rem;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem; //ended 8:19
+      display: inline-block;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  //open states
+
+  &:target {
+    //refers to the popup div. this will appear as soon as order now button is click. order now button anchors this popup and as soon as it is clicked, this will appear
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    //when the popup is triggered, the popup__content will be revealed and transform
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
