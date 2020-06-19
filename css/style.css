@@ -474,7 +474,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -492,12 +492,12 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
-    transition: all 0.4s 0.2s; }
+    transition: all 0.4s; }
   .popup__left {
-    width: 33.33333%;
+    width: 33.333333%;
     display: table-cell; }
   .popup__right {
-    width: 66.6666667%;
+    width: 66.666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
