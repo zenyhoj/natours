@@ -59,7 +59,7 @@ big-desktop:        1800+px         112.5em
     }
 
     @if $breakpoint==big-desktop {
-        @media (max-width: 112.5em) {
+        @media (min-width: 112.5em) {
             @content
         }
 
