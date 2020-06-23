@@ -1,3 +1,14 @@
+/*
+
+phone:              0-600px         37.5em
+tablet-portrait:    600-900px       56.25em
+tablet-landscape:   900-1200px      75em
+
+normal layout apply [1200 - 1800px]
+
+big-desktop:        1800+px         112.5em
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -35,6 +46,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   padding: 3rem;

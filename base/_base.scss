@@ -7,13 +7,45 @@
 }
 
 html {
-    font-size: 62.5%;
+  // this define what 1rem is
+  font-size: 62.5%; // 1rem = 10px, which is 10/16 * 100 = 62.5%
+
+  // @include respond(phone) {
+  //   font-size: 50%; // for phone, we want 1rem = 8px, which is 8/16*100 = 50%;
+  // } optional, because tablet-portrait font-size is also the same with the phone, so no need.
+
+  //Order: always the larger ones before the small, except for big-desktop
+
+  @include respond(big-desktop) {
+    // >=1800+
+    font-size: 75%; // 1rem = 12px, which is 12/16*100 = 75%;
   }
 
-
-  body {
-    
-    padding: 3rem;
-    box-sizing: border-box;
+  @include respond(tablet-landscape) {
+    //<=1200
+    font-size: 56.25%; // 1rem = 9px, which is 9/16*100 = 56.25%;
   }
-  
+
+  @include respond(tablet-portrait) {
+    //<=900px
+    font-size: 50%; // 1rem = 8px, which is 8/16*100 = 50%;
+  }
+
+  // @include respond(phone) {
+  //   font-size: 31.25%; // 1rem = 4.5px, which is 5/16*100 = 31.25%;
+  // }
+
+
+
+
+
+
+
+}
+
+
+body {
+
+  padding: 3rem;
+  box-sizing: border-box;
+}

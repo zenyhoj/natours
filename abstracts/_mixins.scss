@@ -16,3 +16,53 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+// Media Query Manager
+
+/*
+
+phone:              0-600px         37.5em
+tablet-portrait:    600-900px       56.25em
+tablet-landscape:   900-1200px      75em
+
+normal layout apply [1200 - 1800px]
+
+big-desktop:        1800+px         112.5em
+
+*/
+
+// Order: Base > typography > general layout + grid > page layout + components
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tablet-portrait {
+        @media (max-width: 56.25em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tablet-landscape {
+        @media (max-width: 75em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==big-desktop {
+        @media (max-width: 112.5em) {
+            @content
+        }
+
+        ;
+    }
+}
